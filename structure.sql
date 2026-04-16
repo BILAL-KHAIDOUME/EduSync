@@ -45,3 +45,4 @@ CREATE TABLE enrollments (
     enrolled_at DATE NOT NULL,
     status 
 )
+
