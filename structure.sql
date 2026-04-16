@@ -26,9 +26,14 @@ CREATE TABLE classes (
 CREATE TABLE courses (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(50) NOT NULL,
-    description VARCHAR(50) NOT NULL,
+    description TEXT NOT NULL,
     total_hours INT NOT NULL
 );
+ALTER TABLE courses
+ADD user_id INT after total_hours;
+ALTER TABLE courses
+ADD FOREIGN KEY (user_id) REFERENCES users(id);
+
 
 CREATE TABLE students (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -36,7 +41,7 @@ CREATE TABLE students (
     student_number INT NOT NULL,
     classes_id INT,
     FOREIGN KEY (classes_id) REFERENCES classes(id),
-    users_id INT,
+    users_id INT UNIQUE,
     FOREIGN KEY (users_id) REFERENCES users(id)
 );
 
@@ -44,7 +49,11 @@ CREATE TABLE students (
 CREATE TABLE enrollments (
     id INT AUTO_INCREMENT PRIMARY KEY,
     enrolled_at DATE NOT NULL,
-    status 
+    status ENUM ('Actif' , 'Terminé') NOT NULL,
+    students_id INT UNIQUE,
+    FOREIGN KEY (students_id) REFERENCES students(id),
+    courses_id INT UNIQUE,
+    FOREIGN KEY (courses_id) REFERENCES courses(id)
 )
 
 
