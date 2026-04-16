@@ -40,6 +40,7 @@ CREATE TABLE students (
     FOREIGN KEY (users_id) REFERENCES users(id)
 );
 
+
 CREATE TABLE enrollments (
     id INT AUTO_INCREMENT PRIMARY KEY,
     enrolled_at DATE NOT NULL,
