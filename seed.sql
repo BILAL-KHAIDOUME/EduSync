@@ -17,7 +17,6 @@ INSERT INTO users (firstname , lastname , email , password , roles_id) VALUES
 ('abdellah' , 'mahmoudi' , 'abdellah@gmail.com' , SHA2('abdellah123' , 256) , 3);
 
 
-
 INSERT INTO courses (title, description, total_hours, user_id) VALUES
 ('Développement Web', 'HTML, CSS, JavaScript, PHP', 120, 2),   
 ('Base de Données', 'MySQL, conception, normalisation', 80, 2), 
