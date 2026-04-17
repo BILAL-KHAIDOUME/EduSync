@@ -35,6 +35,7 @@ INSERT INTO students (date_of_birth, student_number, classes_id, users_id) VALUE
 ('2001-11-05', 'STU-003', 2, 6),  
 ('2000-01-30', 'STU-004', 3, 7); 
 
+
 INSERT INTO enrollments (enrolled_at, status, students_id, courses_id) VALUES
 ('2026-01-10', 'Actif',   1, 2),  
 ('2026-01-10', 'Actif',   1, 3),  
