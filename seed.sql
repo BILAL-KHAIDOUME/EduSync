@@ -44,3 +44,4 @@ INSERT INTO enrollments (enrolled_at, status, students_id, courses_id) VALUES
 ('2026-01-20', 'Actif',   3, 3),  
 ('2026-02-01', 'Actif',   4, 3); 
 
+
