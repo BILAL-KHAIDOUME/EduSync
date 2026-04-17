@@ -13,9 +13,13 @@ CREATE TABLE users (
     lastname VARCHAR(20) NOT NULL,
     email VARCHAR(50) UNIQUE NOT NULL,
     password VARCHAR(256) NOT NULL,
-    roles_id INT UNIQUE ,
+    roles_id INT ,
     FOREIGN KEY (roles_id) REFERENCES roles(id)
 );
+
+ALTER TABLE users
+DROP constraint roles_id;
+
 
 CREATE TABLE classes (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -50,12 +54,14 @@ CREATE TABLE enrollments (
     id INT AUTO_INCREMENT PRIMARY KEY,
     enrolled_at DATE NOT NULL,
     status ENUM ('Actif' , 'Terminé') NOT NULL,
-    students_id INT UNIQUE,
+    students_id INT ,
     FOREIGN KEY (students_id) REFERENCES students(id),
-    courses_id INT UNIQUE,
-    FOREIGN KEY (courses_id) REFERENCES courses(id)
-)
+    courses_id INT ,
+    FOREIGN KEY (courses_id) REFERENCES courses(id),
+);
 
+ALTER TABLE enrollments 
+ADD UNIQUE (students_id , courses_id);
 
 
 
