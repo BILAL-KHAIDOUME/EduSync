@@ -28,6 +28,7 @@ INSERT INTO classes (name , classrom_number) VALUES
 ('Designer UI/UX 2026', 102),
 ('DevOps Engineer 2026', 103);
 
+
 INSERT INTO students (date_of_birth, student_number, classes_id, users_id) VALUES
 ('2000-03-15', 'STU-001', 1, 4),  
 ('1999-07-22', 'STU-002', 1, 5),  
